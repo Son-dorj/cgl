@@ -46,22 +46,7 @@ void drawhouse(GLfloat mat[3][3])
 	glVertex2f(mat[0][2],mat[1][2]);
 	glEnd();
 }
-/*void rotation()
-{
-    	int ch;
-	printf("enter the choice to rotate\n1. fixed point\n2. origin\n");
-	scanf("%d",&ch);
-	switch(ch)
-	{
-		case 1: h=100, k=100;
-			rotate();
-			glColor3f(1.0,0.0,0.0);
-			drawhouse(rot_mat);
-			break;
-		default: printf("\n invalid choice");
-	}
-	glutPostRedisplay();
-}*/
+
 void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -101,7 +86,7 @@ int main(int argc,char** argv)
 {
 	printf("\nEnter the rotation angle : ");
 	scanf("%f",&theta);
-printf("\n enter the choice 1. fixed point 2. origin");
+	printf("\n enter the choice 1. fixed point 2. origin");
 	scanf("%d",&ch);
 	rad=theta*(3.14/180.0);
 	glutInit(&argc,argv);
