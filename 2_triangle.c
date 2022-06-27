@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<math.h>
 #include<GL/glut.h>
-GLfloat house[3][3]={{100.0,150.0,200},{100.0,150.0,100.0},{1.0,1.0,1.0}};
+GLfloat triangle[3][3]={{100.0,150.0,200},{100.0,150.0,100.0},{1.0,1.0,1.0}};
 GLfloat rot_mat[3][3]={{0},{0},{0}};
 GLfloat result[3][3]={{0},{0},{0}};
 GLfloat h;
@@ -17,7 +17,7 @@ void multiply()
 		{
 			result[i][j]=0;
 			for(l=0;l<3;l++)
-				result[i][j]=result[i][j]+rot_mat[i][l]*house[l][j];
+				result[i][j]=result[i][j]+rot_mat[i][l]*triangle[l][j];
 		}
 }
 void rotate()
@@ -37,7 +37,7 @@ void rotate()
 	multiply();
 }
 
-void drawhouse(GLfloat mat[3][3])
+void drawtriangle(GLfloat mat[3][3])
 {
 	
 	glBegin(GL_TRIANGLES);
@@ -52,7 +52,7 @@ void display()
 	glClear(GL_COLOR_BUFFER_BIT);
 	theta=rad;
 	glColor3f(1.0,1.0,0.0);
-	drawhouse(house);
+	drawtriangle(triangle);
 	if(ch==1)
 		{
 			h=100;
@@ -62,13 +62,13 @@ glColor3f(1.0,0.0,0.0);
 }
 	if(ch==2)
 	{
-		h=(house[0][0]+house[0][1]+house[0][2])/3;
-		k=(house[1][0]+house[1][1]+house[1][2])/3;
+		h=(triangle[0][0]+triangle[0][1]+triangle[0][2])/3;
+		k=(triangle[1][0]+triangle[1][1]+triangle[1][2])/3;
 		rotate();
 		glColor3f(1.0,0.0,1.0);
 	}
 
-	drawhouse(result);
+	drawtriangle(result);
 	glFlush();
 }
 
