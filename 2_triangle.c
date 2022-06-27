@@ -86,7 +86,7 @@ int main(int argc,char** argv)
 {
 	printf("\nEnter the rotation angle : ");
 	scanf("%f",&theta);
-	printf("\n enter the choice 1. fixed point 2. origin");
+	printf("enter the choice \n1. fixed point \t2. origin");
 	scanf("%d",&ch);
 	rad=theta*(3.14/180.0);
 	glutInit(&argc,argv);
